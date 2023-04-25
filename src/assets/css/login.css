@@ -1,0 +1,23 @@
+.loginPage {
+  background: whitesmokes;
+  margin-top: 112px;
+}
+.loginPage .loginCard {
+  background-color: rgb(252, 253, 253);
+  padding: 20px;
+  border-radius: 10px;
+  width: 32rem;
+  height: 24rem;
+}
+.loginPage .loginHeading {
+  /* color: rgb(36, 50, 46); */
+  font-size: 24px;
+  font-weight: 500;
+  text-align: center;
+}
+.loginPage .forgot-password {
+  text-decoration: none;
+}
+.loginPage .loginLeftText {
+  width: 32rem;
+}
