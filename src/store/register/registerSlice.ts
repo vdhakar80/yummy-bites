@@ -1,32 +1,24 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { User } from "./registerTypes";
+import { registerUserType } from "./registerTypes";
 
-const initialState: User = {
-  name: "",
-  userId: "",
-  emailId: "",
-  contactNo: "",
-  password: "",
-  orders: [],
-  profilePicture: "",
-  address: "",
-  city: "",
-  state: "",
-  country: "",
+const initialState: registerUserType = {
+  error: "",
+  success: "",
 };
 
 const registerSlice = createSlice({
   name: "register",
   initialState,
   reducers: {
-    setUser: (state, action: PayloadAction<User>) => {
-      state.name = action.payload.name;
-      state.emailId = action.payload.emailId;
-      state.userId = action.payload.userId;
+    setRegisterError: (state, action: PayloadAction<string>) => {
+      state.error = action.payload;
+    },
+    setRegisterSuccess: (state, action: PayloadAction<string>) => {
+      state.success = action.payload;
     },
   },
 });
 
-export const { setUser } = registerSlice.actions;
+export const { setRegisterError, setRegisterSuccess } = registerSlice.actions;
 
 export default registerSlice.reducer;

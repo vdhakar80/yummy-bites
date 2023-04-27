@@ -1,0 +1,28 @@
+.my-navbar {
+  /* background: black;
+  color: white; */
+  display: flex;
+  padding: 8px 24px;
+  justify-content: space-between;
+  align-items: center;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+  background: white;
+}
+.my-navbar .my-navbar-left .my-logo {
+  border-radius: 10px;
+  cursor: pointer;
+}
+.my-navbar .my-navbar-right {
+  display: flex;
+  column-gap: 20px;
+  align-items: center;
+}
+.my-navbar .my-navbar-right .cart {
+  cursor: pointer;
+}
+.my-navbar .my-navbar-right .profile-button .profile-image {
+  border-radius: 50%;
+  cursor: pointer;
+}

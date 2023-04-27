@@ -1,6 +1,3 @@
-import { Height } from "@mui/icons-material";
-import React from "react";
-
 function Banner() {
   return (
     <>
@@ -13,19 +10,17 @@ function Banner() {
             backgroundPosition: "center",
             backgroundSize: "cover",
           }}
-        >
-          Banner
-        </div>
+        ></div>
         <div style={{ position: "absolute", zIndex: "1", top: "150px" }}>
           <h1
             style={{
-              fontSize: "100px",
+              fontSize: "120px",
               fontWeight: "800",
               color: "white",
               textAlign: "center",
             }}
           >
-            Restaurants and more, delivered to your door
+            Pizza and more, delivered to your door
           </h1>
         </div>
       </div>

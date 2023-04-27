@@ -1,6 +1,6 @@
 import { createAction } from "@reduxjs/toolkit";
-import { User } from "./registerTypes";
+import { User } from "./../user/userTypes";
 // Define actions
-export const fetchUserDataAsync = createAction<User | undefined>(
+export const registerDataAsync = createAction<User | undefined>(
   "register/fetchUserDataAsync"
 );

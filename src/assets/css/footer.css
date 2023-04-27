@@ -1,0 +1,15 @@
+.myfooter {
+  height: 400px;
+  background-color: rgb(10, 54, 80);
+  border-top-left-radius: 414px 50px;
+  border-top-right-radius: 956px 130px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  overflow: hidden;
+  padding: 3px;
+  border: 1px solid #fff;
+  color: white;
+}
+.myfooter .upper-footer {
+  margin-top: 100px;
+}

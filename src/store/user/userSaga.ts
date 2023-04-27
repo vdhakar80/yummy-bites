@@ -1,8 +1,7 @@
 import { call, put, takeEvery } from "redux-saga/effects";
-import { setUser } from "./../user/userSlice";
+import { setUser } from "./userSlice";
 import axios, { AxiosResponse } from "axios";
-import { User } from "./../user/userTypes";
-import { setRegisterError, setRegisterSuccess } from "./registerSlice";
+import { User } from "./userTypes";
 
 function* fetchUserDataAsync(action: { type: string; payload: User }) {
   try {
@@ -21,15 +20,11 @@ function* fetchUserDataAsync(action: { type: string; payload: User }) {
     );
     console.log("inside saga", response);
     yield put(setUser(response.data));
-    yield put(setRegisterError(""));
-    yield put(setRegisterSuccess("Successully Registered"));
   } catch (error: any) {
-    const { response: { data: { message = "" } = {} } = {} } = error;
-    yield put(setRegisterError(message));
-    yield put(setRegisterSuccess(""));
+    console.log("inside saga", error);
   }
 }
 
-export function* registerSaga() {
+export function* userSagaSaga() {
   yield takeEvery("register/fetchUserDataAsync", fetchUserDataAsync);
 }
