@@ -10,6 +10,8 @@ import store from "./store/store";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "react-toastify/dist/ReactToastify.css";
+import "owl.carousel/dist/assets/owl.carousel.css";
+import "owl.carousel/dist/assets/owl.theme.default.css";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement

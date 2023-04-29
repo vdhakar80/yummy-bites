@@ -1,0 +1,10 @@
+.carouselCard {
+  display: flex;
+  background-color: whitesmoke;
+  border-radius: 16px;
+}
+.carouselCard .carouselCardImg {
+  flex: 0.5;
+  width: 200px !important;
+  border-radius: 16px;
+}

@@ -7,6 +7,8 @@ import Categories from "../components/homepage/Categories";
 import AutoPlay from "../components/Autoplay";
 import Navbar from "../components/Navbar";
 import Footer from "../components/homepage/Footer";
+import MenuSlider from "../components/homepage/MenuSlider";
+import UploadImage from "../components/UploadImage";
 
 function HomePage() {
   return (
@@ -18,8 +20,10 @@ function HomePage() {
       <Categories />
       <Category />
       {/* <AutoPlay /> */}
+      <MenuSlider />
       <div style={{ height: "500px" }}></div>
       <Footer />
+      <UploadImage />
     </>
   );
 }
