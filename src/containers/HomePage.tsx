@@ -23,7 +23,7 @@ function HomePage() {
       <MenuSlider />
       <div style={{ height: "500px" }}></div>
       <Footer />
-      <UploadImage />
+      {/* <UploadImage /> */}
     </>
   );
 }
