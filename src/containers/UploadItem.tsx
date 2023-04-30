@@ -98,9 +98,13 @@ function UploadItem() {
                 >
                   <option value={"pizza"}>pizza</option>
                   <option value={"paratha"}>paratha</option>
+                  <option value={"pasta"}>Pasta</option>
+                  <option value={"idli"}>Idli</option>
                   <option value={"burger"}>burger</option>
                   <option value={"springroll"}>springroll</option>
                   <option value={"dosa"}>dosa</option>
+                  <option value={"dessert"}>Dessert</option>
+                  <option value={"poha"}>Poha</option>
                 </select>
               </div>
               <div className="form-group">
