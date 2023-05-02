@@ -1,0 +1,6 @@
+.orderTypeContainer {
+  height: 590px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}

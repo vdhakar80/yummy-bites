@@ -19,7 +19,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/uploadItems" element={<UploadItem />} />
           <Route path="/items" element={<ItemListing />} />
-          <Route path="/items/:itemName" element={<ItemListing />} />
+          <Route path="/items/:itemType" element={<ItemListing />} />
         </Routes>
         <ToastContainer />
       </BrowserRouter>

@@ -9,6 +9,8 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/homepage/Footer";
 import MenuSlider from "../components/homepage/MenuSlider";
 import UploadImage from "../components/UploadImage";
+import OrderType from "../components/homepage/OrderType";
+import Menu from "../components/homepage/Menu";
 
 function HomePage() {
   return (
@@ -16,11 +18,13 @@ function HomePage() {
       {/* <Header /> */}
       <Navbar />
       <Banner />
+      <MenuSlider />
       {/* <Counter /> */}
       <Categories />
       <Category />
       {/* <AutoPlay /> */}
-      <MenuSlider />
+      <Menu />
+      <OrderType />
       <div style={{ height: "500px" }}></div>
       <Footer />
       {/* <UploadImage /> */}

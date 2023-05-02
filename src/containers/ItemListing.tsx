@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import style from "./../assets/cssModules/itemListing.module.css";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 
 const categoryList = [
@@ -17,7 +17,8 @@ const categoryList = [
 ];
 
 function ItemListing() {
-  const [itemCategory, setItemCategory] = useState("");
+  const { itemType } = useParams();
+  const [itemCategory, setItemCategory] = useState(itemType);
   const [itemList, setItemList] = useState<any>([]);
 
   useEffect(() => {
@@ -29,7 +30,7 @@ function ItemListing() {
       .catch((err) => {
         console.log(err);
       });
-  }, [itemCategory]);
+  }, [itemCategory, itemType]);
 
   return (
     <div style={{ background: "rgb(250, 250, 250)" }}>

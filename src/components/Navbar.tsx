@@ -2,6 +2,7 @@ import React from "react";
 import "./../assets/css/navbar.css";
 import yummyBitesLogo from "./../assets/images/yummyBitesLogo.png";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
@@ -9,12 +10,14 @@ function Navbar() {
       {/* <div> */}
       <div className="my-navbar">
         <div className="my-navbar-left">
-          <img
-            src={yummyBitesLogo}
-            height={50}
-            width={50}
-            className="my-logo"
-          />
+          <Link to={"/"}>
+            <img
+              src={yummyBitesLogo}
+              height={50}
+              width={50}
+              className="my-logo"
+            />
+          </Link>
         </div>
         <div className="my-navbar-right">
           <div className="cart">
