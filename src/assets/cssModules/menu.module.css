@@ -1,4 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+
 .menuContainerWrapper {
   height: 734px;
   padding-top: 104px;
+  margin: 16px 200px 88px 200px;
+}
+.chooseFlavor {
+  text-align: center;
+  color: #e4032f;
+  font-family: "Oswald", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 2px;
+}
+.foodTogether {
+  text-align: center;
+  line-height: 1.25em;
+  font-family: "Oswald", sans-serif;
+  font-weight: 500;
+  font-size: 64px;
+}
+.description {
+  text-align: center;
+  line-height: 27px;
+  font-family: "Oswald", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #4a4a4a;
+  margin: 12px 250px 18px 250px;
+}
+.viewMenu {
+  text-align: center;
+}
+.viewMenu button {
+  background-color: white;
+  color: #e4032f;
+  border: 1px solid #e4032f;
+  border-radius: 5px;
+  padding: 12px 24px 12px 24px;
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 700;
+  transition: all 0.3s;
+}
+.viewMenu button:hover {
+  background-color: #e4032f;
+  color: white;
+}
+.menuListWrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 48px;
+  column-gap: 40px;
+}
+.menuItem {
+  position: relative;
+  bottom: 56px;
+}
+.itemImage {
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s;
+  transition-duration: 0.3s;
+}
+.itemImage:hover {
+  bottom: 8px;
+}
+.itemName {
+  font-size: 24px;
+  font-weight: 700;
+  color: #e4032f;
 }

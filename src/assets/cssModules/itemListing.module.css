@@ -112,3 +112,25 @@
   border-top-right-radius: 8px;
   border-top-left-radius: 8px;
 }
+.incDecItems {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid rgb(0, 171, 0);
+  align-items: center;
+  border-radius: 8px;
+}
+.incDecItems button {
+  width: 100%;
+  border: none;
+  background-color: white;
+  color: white;
+  border-radius: 8px;
+}
+.incDecItems div {
+  text-align: center;
+  width: 30%;
+  border: none;
+  border-left: 1px solid rgb(0, 171, 0);
+  border-right: 1px solid rgb(0, 171, 0);
+  color: rgb(0, 171, 0);
+}

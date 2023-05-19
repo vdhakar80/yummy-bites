@@ -3,7 +3,12 @@ import Navbar from "../components/Navbar";
 import style from "./../assets/cssModules/itemListing.module.css";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
-
+import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";
+import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
+import ItemCard from "../components/itemListing/ItemCard";
+import { useDispatch } from "react-redux";
+import { getItemListAsync } from "../store/itemListing/itemListingActions";
+import { useSelector } from "react-redux";
 const categoryList = [
   "",
   "pizza",
@@ -17,20 +22,25 @@ const categoryList = [
 ];
 
 function ItemListing() {
+  const dispatch = useDispatch();
+  const itemList = useSelector((state: any) => state?.itemList?.itemList);
+  console.log("item List inside component", itemList);
   const { itemType } = useParams();
-  const [itemCategory, setItemCategory] = useState(itemType);
-  const [itemList, setItemList] = useState<any>([]);
+  const [itemCategory, setItemCategory] = useState(itemType ? itemType : "");
+  // const [itemList, setItemList] = useState<any>([]);
 
   useEffect(() => {
-    axios
-      .get(`http://localhost:5000/items/${itemCategory}`)
-      .then((res) => {
-        setItemList(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    dispatch(getItemListAsync(itemCategory));
+    // axios
+    //   .get(`http://localhost:5000/items/${itemCategory}`)
+    //   .then((res) => {
+    //     setItemList(res.data);
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //   });
   }, [itemCategory, itemType]);
+  console.log("itemList", itemList);
 
   return (
     <div style={{ background: "rgb(250, 250, 250)" }}>
@@ -59,8 +69,9 @@ function ItemListing() {
         <div className={style.itemList}>
           {itemList.map((ele: any) => {
             return (
-              <>
-                <div className={style.itemCard}>
+              <div key={ele._id}>
+                <ItemCard data={ele} />
+                {/* <div className={style.itemCard}>
                   <img
                     src={ele.image}
                     alt="food"
@@ -79,9 +90,18 @@ function ItemListing() {
                     <button className={style.addToCartButton}>
                       Add to cart
                     </button>
+                    <div className={style.incDecItems}>
+                      <button>
+                        <AddCircleOutlineIcon color="action" />
+                      </button>
+                      <div>2</div>
+                      <button>
+                        <RemoveCircleOutlineIcon color="action" />
+                      </button>
+                    </div>
                   </div>
-                </div>
-              </>
+                </div> */}
+              </div>
             );
           })}
           {itemList.length < 1 && (
