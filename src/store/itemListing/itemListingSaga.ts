@@ -8,7 +8,7 @@ function* itemListSAsync(action: ItemListAsyncActionType) {
     const url = `http://localhost:5000/items/${action.payload}`;
     const response: AxiosResponse<ItemListType[]> = yield call(axios.get, url);
     yield put(setItemList(response.data));
-    console.log("response itemList", response);
+    // console.log("response itemList", response);
   } catch (error) {
     console.log("response itemList error", error);
   }

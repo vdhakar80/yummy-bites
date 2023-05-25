@@ -24,7 +24,7 @@ const categoryList = [
 function ItemListing() {
   const dispatch = useDispatch();
   const itemList = useSelector((state: any) => state?.itemList?.itemList);
-  console.log("item List inside component", itemList);
+  // console.log("item List inside component", itemList);
   const { itemType } = useParams();
   const [itemCategory, setItemCategory] = useState(itemType ? itemType : "");
   // const [itemList, setItemList] = useState<any>([]);
@@ -40,16 +40,16 @@ function ItemListing() {
     //     console.log(err);
     //   });
   }, [itemCategory, itemType]);
-  console.log("itemList", itemList);
+  // console.log("itemList", itemList);
 
   return (
     <div style={{ background: "rgb(250, 250, 250)" }}>
       <Navbar />
       <div className={style.itemListing}>
         <div className={style.categoryList}>
-          {categoryList.map((ele) => {
+          {categoryList.map((ele, index: number) => {
             return (
-              <>
+              <div key={index}>
                 <Link
                   to={`/items/${ele}`}
                   className={style.category}
@@ -62,7 +62,7 @@ function ItemListing() {
                 >
                   {ele ? ele : "All"}
                 </Link>
-              </>
+              </div>
             );
           })}
         </div>

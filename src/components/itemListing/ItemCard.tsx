@@ -1,12 +1,63 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import style from "./../../assets/cssModules/itemListing.module.css";
+import { useDispatch } from "react-redux";
+import {
+  addToCart,
+  removeFromCart,
+  updateItem,
+} from "../../store/cart/cartSlice";
+import { useSelector } from "react-redux";
+import { CartObjectType } from "./../../store/cart/cartTypes";
+import { ItemListType } from "../../store/itemListing/itemListingTypes";
 
-function ItemCard(props: any) {
+function ItemCard(props: { data: ItemListType }) {
+  const dispatch = useDispatch();
+
+  const cart = useSelector(
+    (state: { cart: CartObjectType }) => state.cart.cart
+  );
+
   const [cartValue, setCartValue] = useState(0);
+  useEffect(() => {
+    const isAddedInCart = cart.filter((ele) => ele.itemId === props.data._id);
+    if (isAddedInCart.length > 0) {
+      setCartValue(isAddedInCart[0].itemQuantity);
+    }
+  }, []);
+
+  const addToCartClick = (data: ItemListType, value: number) => {
+    const isavailable = cart.filter((ele) => {
+      if (ele.itemId === data._id) {
+        return true;
+      } else {
+        return false;
+      }
+    });
+    if (value == 0) {
+      dispatch(removeFromCart(data._id));
+    } else {
+      if (isavailable.length == 0) {
+        dispatch(
+          addToCart({
+            itemId: data._id,
+            itemDescription: data.description,
+            itemImg: data.image,
+            itemName: data.name,
+            itemPrice: data.price,
+            itemQuantity: value,
+          })
+        );
+      } else {
+        {
+          dispatch(updateItem({ itemId: data._id, itemQuantity: value }));
+        }
+      }
+    }
+  };
 
   return (
     <div className={style.itemCard}>
@@ -28,17 +79,30 @@ function ItemCard(props: any) {
         {cartValue == 0 ? (
           <button
             className={style.addToCartButton}
-            onClick={() => setCartValue((val) => val + 1)}
+            onClick={() => {
+              setCartValue((val) => val + 1);
+              addToCartClick(props.data, 1);
+            }}
           >
             Add to cart
           </button>
         ) : (
           <div className={style.incDecItems}>
-            <button onClick={() => setCartValue((val) => val + 1)}>
+            <button
+              onClick={() => {
+                addToCartClick(props.data, cartValue + 1);
+                setCartValue((val) => val + 1);
+              }}
+            >
               <AddCircleOutlineIcon color="success" />
             </button>
             <div>{cartValue}</div>
-            <button onClick={() => setCartValue((val) => val - 1)}>
+            <button
+              onClick={() => {
+                addToCartClick(props.data, cartValue - 1);
+                setCartValue((val) => val - 1);
+              }}
+            >
               <RemoveCircleOutlineIcon color="success" />
             </button>
           </div>

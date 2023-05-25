@@ -9,3 +9,8 @@ export interface CartItemType {
 export interface CartObjectType {
   cart: CartItemType[];
 }
+
+export interface UpdateItemType {
+  itemId: string;
+  itemQuantity: number;
+}
