@@ -1,0 +1,11 @@
+.cartValue {
+  display: inline-block;
+  position: relative;
+  bottom: 8px;
+  right: 12px;
+  border-radius: 50%;
+  color: white;
+  background-color: black;
+  font-size: 12px;
+  padding: 0 2px;
+}

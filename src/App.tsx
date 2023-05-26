@@ -7,6 +7,7 @@ import Register from "./containers/Register";
 import { ToastContainer } from "react-toastify";
 import UploadItem from "./containers/UploadItem";
 import ItemListing from "./containers/ItemListing";
+import CartPage from "./containers/CartPage";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/uploadItems" element={<UploadItem />} />
+          <Route path="/cart" element={<CartPage />} />
           <Route path="/items" element={<ItemListing />} />
           <Route path="/items/:itemType" element={<ItemListing />} />
         </Routes>
